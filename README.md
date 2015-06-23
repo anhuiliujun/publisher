@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1. rails g publisher:install
+2. Call `Publisher.publish` when you want to publish message.
+  ```ruby
+  Publisher.publish(channel, message)
+  ```
+
+  This will publish message to channel.
 
 ## Contributing
 
