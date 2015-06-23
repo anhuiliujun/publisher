@@ -1,5 +1,6 @@
 defaults: &defaults
   faye_url: 'http://localhost:3000/faye'
+  auth_token: '3ae474dd0218c908f2037a13ce596358988e92ea90fa28b23833f2f623f5ea6840b171350c6a454bca645df82aaa67e29008ffbf9ef1bd8b0bc2376275bb3778'
 
 development:
   <<: *defaults

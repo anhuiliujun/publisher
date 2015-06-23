@@ -3,7 +3,7 @@ module Publisher
   class << self
     extend Forwardable
 
-    def_delegators :configuration, :host
+    def_delegators :configuration, :host, :auth_token
 
     attr_writer :configuration
 
@@ -16,7 +16,7 @@ module Publisher
 		end
 
     def publish(channel, data)
-      message = {channel: channel, data: data}.to_json
+      message = {channel: channel, data: data}.merge(ext: {auth_token: auth_token}).to_json
 
       Publisher::Request.new(:post, host, {}, {message: message}, {}).call
     end

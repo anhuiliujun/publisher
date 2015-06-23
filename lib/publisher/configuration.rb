@@ -5,6 +5,10 @@ module Publisher
       config['faye_url']
     end
 
+    def auth_token
+      config['auth_token']
+    end
+
     private
     def file_path
       Rails.root.join("config/publisher.yml")
