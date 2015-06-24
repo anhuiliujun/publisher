@@ -7,13 +7,13 @@ module Publisher
 
     attr_writer :configuration
 
-		def configuration
-			@configuration ||= Publisher::Configuration.new
-		end
+    def configuration
+      @configuration ||= Publisher::Configuration.new
+    end
 
-		def configure
-			yield(configuration)
-		end
+    def configure
+      yield(configuration)
+    end
 
     def publish(channel, data)
       message = {channel: channel, data: data}.merge(ext: {auth_token: auth_token}).to_json
